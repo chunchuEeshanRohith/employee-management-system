@@ -1,47 +1,41 @@
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# Root-level .gitignore
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
+# General
+.DS_Store
 .vscode/
+*.log
 
-### Frontend ###
+# Backend (Spring Boot)
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/mvnw
+backend/mvnw.cmd
+backend/HELP.md
+
+# Frontend (React/Vite)
 frontend/node_modules/
 frontend/dist/
 frontend/.env
 frontend/.env*
 
-### Environment Secrets ###
+# Environment Secrets
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 *.env
+.env.example
+
+# IntelliJ / IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+backend/nbproject/private/
+backend/nbbuild/
+backend/dist/
+backend/nbdist/
+backend/.nb-gradle/
+backend/build/
+
