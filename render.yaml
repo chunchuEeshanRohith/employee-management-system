@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: employee-management-api
+    runtime: java
+    buildCommand: "./mvnw clean package -DskipTests"
+    startCommand: "java -jar target/*.jar"
+    rootDir: backend
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        sync: false
