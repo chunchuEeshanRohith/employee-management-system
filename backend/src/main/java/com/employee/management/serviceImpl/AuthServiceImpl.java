@@ -65,6 +65,10 @@ public class AuthServiceImpl implements AuthService {
         User user = userRepository.findByUsername(request.getUsername())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid username or password"));
 
+        if (user.getRole() != User.Role.ROLE_ADMIN) {
+            throw new IllegalArgumentException("Ask admin to give admin role");
+        }
+
         UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
         String token = jwtUtil.generateToken(userDetails);
 
