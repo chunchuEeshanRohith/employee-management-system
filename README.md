@@ -35,6 +35,25 @@ npm install
 npm run dev
 ```
 
+## 🐋 Docker Workflow
+
+You can run the backend as a containerized service. This is perfect for local testing and production consistency.
+
+### 1. Build the Backend Image
+```bash
+cd backend
+docker build -t employee-backend .
+```
+
+### 2. Run the Container locally
+```bash
+docker run -p 8080:8080 \
+  -e DB_USERNAME=your_user \
+  -e DB_PASSWORD=your_password \
+  -e JWT_SECRET=your_secret \
+  employee-backend
+```
+
 ## 🌐 Deployment
 
 - **Frontend**: Deploy the `frontend/` folder to Vercel/Netlify. Set `VITE_API_BASE_URL` to your production backend URL.
